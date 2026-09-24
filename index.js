@@ -211,6 +211,11 @@ export function getTotalCost(cart) {
  */
 export function zip(keys, values) {
   // TODO
+  const zipObject = {};
+  for (let i = 0; i < keys.length; i++) {
+    zipObject[keys[i]] = values[i];
+  }
+  return zipObject;
 }
 
 /**
@@ -227,4 +232,13 @@ export function zip(keys, values) {
  */
 export function countCharacters(word) {
   // TODO
+  const charObject = {};
+  for (let i = 0; i < word.length; i++) {
+    let characterCount = 0;
+    for (const char of word) {
+      if (word[i] === char) characterCount+=1;
+    }
+    charObject[word[i]] = characterCount;
+  }
+  return charObject;
 }
