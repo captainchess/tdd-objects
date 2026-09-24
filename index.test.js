@@ -72,7 +72,7 @@ describe("increment", function () {
   });
 });
 
-describe.only("getTaxicabDistance", function () {
+describe("getTaxicabDistance", function () {
   it("returns the correct taxicab distance", function () {
     expect(getTaxicabDistance({ x: 0, y: 0 }, { x: 3, y: 4 })).toBe(7);
   });
@@ -84,7 +84,7 @@ describe.only("getTaxicabDistance", function () {
   });
 });
 
-describe("getHerbivores", function () {
+describe.only("getHerbivores", function () {
   it("returns herbivores", function () {
     expect(
       getHerbivores([
