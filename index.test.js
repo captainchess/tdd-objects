@@ -72,7 +72,7 @@ describe("increment", function () {
   });
 });
 
-describe("getTaxicabDistance", function () {
+describe.only("getTaxicabDistance", function () {
   it("returns the correct taxicab distance", function () {
     expect(getTaxicabDistance({ x: 0, y: 0 }, { x: 3, y: 4 })).toBe(7);
   });

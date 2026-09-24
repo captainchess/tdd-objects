@@ -12,6 +12,7 @@
  */
 export function getCohort(student) {
   // TODO
+  return student.cohort;
 }
 
 /**
@@ -31,6 +32,7 @@ export function getCohort(student) {
  */
 export function sortStudents(studentA, studentB) {
   // TODO
+  return studentA.name <= studentB.name ? studentA : studentB;
 }
 
 /**
@@ -48,6 +50,8 @@ export function sortStudents(studentA, studentB) {
  */
 export function makeFlag(color, icon) {
   // TODO
+  const Flag = {color, icon};
+  return Flag;
 }
 
 /**
@@ -64,9 +68,10 @@ export function makeFlag(color, icon) {
  */
 export function increment(count) {
   // TODO
+  return {value: count.value + 1};
 }
 
-/**
+/*
  * @typedef {{x: number, y: number}} Location
  *
  * In a city with a rectangular grid of streets, a taxicab can only
@@ -91,6 +96,33 @@ export function increment(count) {
  */
 export function getTaxicabDistance(from, to) {
   // TODO
+
+  if(from.x === to.x && from.y === to.y) return 0;
+  
+  let fromXNegative;
+  let toXNegative;
+  let xSum;
+  let ySum;
+
+  xSum = returnNegatives(from.x, to.x);
+  ySum = returnNegatives(from.y, to.y);
+
+  if (!xSum || ! ySum) {
+    xSum = from.x + to.x;
+    ySum = from.y + to.y;
+  }
+
+  function returnNegatives(fromNum, toNum) {
+    let sum = 0;
+    
+    if (fromNum < 0 && toNum < 0) return fromXNegative - toXNegative;
+    else if (fromNum < 0) sum = toNum - fromNum;
+    else if (toNum < 0) sum = fromNum - toNum;
+  
+    return sum;
+  }
+
+  return xSum + ySum;
 }
 
 /**
