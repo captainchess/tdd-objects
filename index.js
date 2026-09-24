@@ -160,6 +160,11 @@ export function getHerbivores(animals) {
  */
 export function getCarnivoreNames(animals) {
   // TODO
+  const carnivores = [];
+  for (const animal of animals) {
+    if (animal.isCarnivore) carnivores.push(animal.name);
+  }
+  return carnivores;
 }
 
 /**
